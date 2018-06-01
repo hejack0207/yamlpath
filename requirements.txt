@@ -5,3 +5,13 @@
 # numpy==1.13.3
 # scipy==1.0
 
+nose
+requests
+setuptools
+jsonstreamer
+mock
+pytest
+Sphinx
+unittest2
+vim_bridge
+PyYAML
