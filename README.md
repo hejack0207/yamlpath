@@ -1,2 +1,0 @@
-# yamlpath
-yaml path library
