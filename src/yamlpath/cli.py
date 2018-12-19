@@ -1,11 +1,20 @@
 import click
+import yaml
 
 def append_path(data, keys,path):
-    if type(data) != dict:
+    if type(data) != dict or type(data) != list:
 	return
-    for key in data:
-	keys.append('.'.join(path + [key]))
-	append_path(data[key], keys, path + [key])
+
+    if type(data) == dict:
+        for key in data:
+            keys.append('.'.join(path + [key]))
+            append_path(data[key], keys, path + [key])
+
+    if type(data) == list:
+        for n in range(len(data)):
+            keys.append('.'.join(path + [n]))
+            append_path(data[n], keys, path + [key])
+
 
 @click.command()
 @click.argument('yamlfile', type=click.Path())
