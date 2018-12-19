@@ -3,13 +3,13 @@ yamlpath
 ========
 
 
-Add a short description here!
+Show keys for yaml file
 
 
 Description
 ===========
 
-A longer description of your project goes here...
+Show keys for yaml file...
 
 
 Note
