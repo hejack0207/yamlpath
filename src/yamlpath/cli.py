@@ -18,7 +18,7 @@ def append_path(data, keys,path):
 
 @click.command()
 @click.argument('yamlfile', type=click.Path())
-def cli(yamlfile):
+def run(yamlfile):
     """show all keys recursively for specified yaml file"""
     keys=[]
     try:
@@ -30,6 +30,6 @@ def cli(yamlfile):
     click.echo(keys)
 
 if __name__ == '__main__':
-    cli()
+    run()
 
 # vim: sts=-1 sw=4

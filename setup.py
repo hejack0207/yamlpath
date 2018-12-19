@@ -15,9 +15,8 @@ from setuptools import setup
 entry_points = """
 [console_scripts]
 # script_name = yamlpath.module:function
-# For example:
-# fibonacci = yamlpath.skeleton:run
 """
+yamlpath = yamlpath.cli:run
 
 
 def setup_package():
