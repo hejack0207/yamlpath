@@ -4,15 +4,15 @@ def keypaths(document, row, column):
     text=document
     row = int(row) - 1
     column = int(column) - 1
-    #print text
+    #print(text)
     paths=[]
     lastKey=None
     mappingStart=False
 
     for token in yaml.scan(text):
-        #print "line:%d,column:%d"%(token.start_mark.line,token.start_mark.column)
-        #print "token:%s"% repr(token)
-        #print "start_mark:%s \nend_mark:%s"%(token.start_mark, token.end_mark)
+        #print("line:%d,column:%d" % (token.start_mark.line,token.start_mark.column))
+        #print("token:%s" % repr(token))
+        #print("start_mark:%s \nend_mark:%s" % (token.start_mark, token.end_mark))
         if token.start_mark.line > row or (token.start_mark.line == row and token.start_mark.column > column):
             return paths
 
@@ -36,8 +36,3 @@ def keypaths(document, row, column):
             isKey = False
 
     return paths
-
-if __name__ == "__main__":
-    with open("../skel/docker-composing.yml") as file:
-        paths = keypaths(file.read(), 5,6)
-        print "keypath:"+"/".join(paths)

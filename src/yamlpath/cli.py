@@ -1,7 +1,7 @@
 import click
 import yaml
 
-def append_path(data, keys,path):
+def append_path(data, keys, path):
     if type(data) != dict or type(data) != list:
 	return
 
@@ -23,7 +23,7 @@ def run(yamlfile):
     keys=[]
     try:
         data = yaml.load(open(yamlfile))
-        append_path(data,keys, [])
+        append_path(data, keys, [])
     except yaml.YAMLError:
         click.echo(f"Warn: ParseError in {yamlfile}", err=True)
 

@@ -1,6 +1,6 @@
+from vim_bridge import bridged
 from .keypath import keypaths
 from .jsonschema.completer.completers import match_completions
-from vim_bridge import bridged
 
 schema_file=""
 
@@ -20,7 +20,6 @@ def set_schema(filepath):
 def keys(file_content,row,col):
     comps = completions(file_content,row,col)
     return comps['keys']
-    #return ['aaaa','bbbbb','cccc','dddd']
 
 @bridged
 def values(file_content,row,col):
